@@ -1,18 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import New_title
 
 def home_page(request):
-    return HttpResponse('Home Page!')
+    return render(request, 'learning_log/home_page.html')
 
 def main_page(request):
-    return HttpResponse('Hello in Main page !')
+    return render(request, 'learning_log/main_page.html')
 
 def news_page(request, newsid):
     if newsid == 0:
-        return HttpResponse(f'Sorry we doesnt have page : {newsid}')
+        return HttpResponse("<p><h1>Sorry page not fonud<h1></p>")
     elif newsid <= 100:
-        return HttpResponse(f'Hello in News : {newsid} page')
+        return render(request, 'learning_log/news_page.html')
     else:
-        return HttpResponse(f'Sorry we doesnt have page : {newsid}')
+        return HttpResponse("<p><h1>Sorry page not fonud<h1></p>")
+
+
 
 
