@@ -8,9 +8,11 @@ def main_page(request):
     return HttpResponse('Hello in Main page !')
 
 def news_page(request, newsid):
-    if newsid <= 100:
+    if newsid == 0:
+        return HttpResponse(f'Sorry we doesnt have page : {newsid}')
+    elif newsid <= 100:
         return HttpResponse(f'Hello in News : {newsid} page')
     else:
-        return HttpResponse(f'Sorry we dosnt have page : {newsid}')
+        return HttpResponse(f'Sorry we doesnt have page : {newsid}')
 
 
