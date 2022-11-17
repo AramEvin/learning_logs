@@ -1,2 +1,3 @@
 # learning_logs
-Test Web-Site in Git
+
+Test Web-Site in GitHub
